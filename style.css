@@ -165,6 +165,7 @@ section {
   animation-name: bounce;
   animation-duration: 2s;
   animation-iteration-count: 2;
+  animation-delay: 3s;
   transition: 0.5s ease;
 }
 .down-arrow {
