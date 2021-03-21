@@ -48,6 +48,23 @@ section {
 .logo:hover {
   transform: scale(1.1);
 }
+nav ul {
+  margin-right: 1em;
+  display: none;
+}
+nav li {
+  transition: .5s;
+  padding: 1em;
+}
+nav a {
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
+}
+nav li:hover {
+  transform: scale(1.1);
+}
 /* menu button */
 .menu-container {
   display: flex;
@@ -132,6 +149,21 @@ section {
   font-size: 2rem;
   text-decoration: none;
   color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  nav ul {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+  .menu-container {
+    display: none;
+  }
+  #menu-overlay {
+    display: none;
+  }
 }
 /* jumbo */
 #jumbotron {
