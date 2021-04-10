@@ -23,7 +23,7 @@
 
 //better
 $(".menu").on("click", function () {
-  $(".menu").toggleClass("open");
+  $(this).toggleClass("open");
   if ($(".menu").hasClass("open")) {
     $("#menu-overlay").css("opacity", "1").css("pointer-events", "all");
     $(".logo").css("opacity", "0").css("pointer-events", "none");
@@ -32,8 +32,45 @@ $(".menu").on("click", function () {
     $(".logo").css("opacity", "1").css("pointer-events", "all");
   }
 });
-//load in fade
-function fade() {
-  $('.loader').fadeOut("slow");
+$(window).on("load", function () {
+  $(".loader").fadeOut("slow");
+});
+
+$("#container").scroll(function () {
+  if ($(this).scrollTop() > 100) {
+    $(".up-arrow-container").css({
+      "opacity": "1", 
+      "pointer-events": "all"
+    });
+  } else {
+    $(".up-arrow-container").css({
+      "opacity": "0", 
+      "pointer-events": "none"
+    });
   }
-  setTimeout(fade, 3000);
+});
+
+
+
+const modal = document.querySelector(".modal"); 
+const previews = document.querySelectorAll("#projects img"); 
+const original = document.querySelector(".full-img"); 
+const caption = document.querySelector(".caption"); 
+
+previews.forEach((preview) => {
+  preview.addEventListener("click", () => {
+    modal.classList.add("open");
+    original.classList.add("open");
+    const originalSrc = preview.getAttribute("data-demon");
+    original.src = originalSrc;
+    //const altText = preview.alt;
+    //caption.textContent = altText;
+  });
+});
+
+modal.addEventListener("click", (e) => {
+  if(e.target.classList.contains("full-img")){
+    modal.classList.remove("open");
+    original.classList.remove("open");
+  }
+}); 

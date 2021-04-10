@@ -1,0 +1,20 @@
+
+#navigation,
+#about,
+.banner
+ {
+    animation-name: tpage;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+@keyframes tpage {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
